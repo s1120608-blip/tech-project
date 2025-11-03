@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>柔蓁的時尚連結</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe4ec, #d6c3ff);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+      transition: background 1s ease-in-out;
+      animation: gradientMove 10s infinite alternate;
+    }
+
+    @keyframes gradientMove {
+      0% { background: linear-gradient(135deg, #ffe4ec, #d6c3ff); }
+      100% { background: linear-gradient(135deg, #fdd7ff, #b0dfff); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    img.profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .links a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, #d6c3ff, #ff9ccf);
+      padding: 12px 20px;
+      border-radius: 30px;
+      margin: 10px 0;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .links a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* RWD */
+    @media (max-width: 480px) {
+      h1 { font-size: 1.5rem; }
+      .card { padding: 20px; }
+      img.profile { width: 100px; height: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://i.imgur.com/YOUR_IMAGE.jpg" alt="你的頭像" class="profile">
+    <h1>陳柔蓁</h1>
+    <p class="subtitle">美妝 × 時尚 × 創意</p>
+    <div class="links">
+      <a href="https://github.com/YOUR_GITHUB" target="_blank">💻 GitHub</a>
+      <a href="mailto:YOUR_EMAIL@example.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">💼 LinkedIn</a>
+      <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank">📸 Instagram</a>
+    </div>
+  </div>
+  <footer>© 2025 柔蓁的時尚世界 ✨</footer>
+
+  <script>
+    // 小動畫：點擊連結會有氣泡效果
+    document.querySelectorAll('.links a').forEach(link => {
+      link.addEventListener('click', e => {
+        const circle = document.createElement('span');
+        circle.classList.add('ripple');
+        link.appendChild(circle);
+        setTimeout(() => circle.remove(), 600);
+      });
+    });
+  </script>
+</body>
+</html>
